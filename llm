@@ -1,0 +1,33 @@
+There are several free LLM models that you can use to create a chatbot for your website. Some of these models include OpenAssistant/oasst-sft-6-llama-30b-xor, Llama-2-7B-Chat-ggml, and Falcon 7B. Here's a general guide on how to set up one of these models on your website to act as a chatbot:
+Choose a Free LLM Model: Select a free LLM model such as OpenAssistant/oasst-sft-6-llama-30b-xor, Llama-2-7B-Chat-ggml, or Falcon 7B for your chatbot.
+Set up the Model: Follow the specific instructions for setting up the chosen LLM model. This may involve downloading the model and saving it in a specific directory.
+Integrate with Your Website: Once the model is set up, you can integrate it with your website to act as a chatbot. This may involve using tools like Streamlit or LangChain to create a user interface for the chatbot.
+For a more detailed guide on setting up a chatbot with a free LLM model, you can refer to the specific documentation or tutorials provided for the model you choose.
+Sources:
+PCMag - "Who Needs ChatGPT? How to Run Your Own Free and Private AI Chatbot"
+Blog Streamlit - "How to build an LLM-powered ChatBot with Streamlit"
+YouTube - "Create a Custom Chatbot for any Website with LangChain and Llama 2 (Free LLMs and Embeddings)"
+Python in Plain English - "Run Your Own LLM-Powered Chatbot in 5 Easy Steps"
+YouTube - "Build a Private Chatbot with Local LLM (Falcon 7B) and LangChain"
+
+
+```
+import streamlit as st
+from langchain import LLM
+
+# Load the LLM model
+model = LLM("OpenAssistant/oasst-sft-6-llama-30b-xor")
+
+# Define the chatbot function
+def chatbot():
+    st.title("LLM Chatbot")
+    user_input = st.text_input("You: ")
+    if user_input:
+        response = model.generate_text(user_input, max_length=50)
+        st.text("Chatbot: " + response)
+
+# Run the chatbot
+if __name__ == "__main__":
+    chatbot()
+
+```
